@@ -1,30 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code Generator</title>
     <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
-    
-</head>
-<body>
-    <h1>WELCOME  <br>QR Code Generator</h1>
-    <input type="text" id="url" placeholder="Enter URL (e.g., https://youtube.com)">
-    <button onclick="generateQRCode()">Generate QR Code</button>
-    <div id="qrcode"></div>
-
-    <script>
-        function generateQRCode() {
-            const url = document.getElementById('url').value;
-            const qrCodeDiv = document.getElementById('qrcode');
-            qrCodeDiv.innerHTML = ""; // Clear existing QR code
-            QRCode.toCanvas(url, function (err, canvas) {
-                if (err) console.error(err);
-                qrCodeDiv.appendChild(canvas);
-            });
-        }
-    </script>
-</body>
-</html>
-<style>
+    <style>
     body {
         font-family: Arial, sans-serif;
         text-align: center;
@@ -60,3 +41,23 @@
         margin-top: 20px;
     }
 </style>
+</head>
+<body>
+    <h1>WELCOME  <br>QR Code Generator</h1>
+    <input type="text" id="url" placeholder="Enter URL (e.g., https://youtube.com)">
+    <button onclick="generateQRCode()">Generate QR Code</button>
+    <div id="qrcode"></div>
+
+    <script>
+        function generateQRCode() {
+            const url = document.getElementById('url').value;
+            const qrCodeDiv = document.getElementById('qrcode');
+            qrCodeDiv.innerHTML = ""; // Clear existing QR code
+            QRCode.toCanvas(url, function (err, canvas) {
+                if (err) console.error(err);
+                qrCodeDiv.appendChild(canvas);
+            });
+        }
+    </script>
+</body>
+</html>
